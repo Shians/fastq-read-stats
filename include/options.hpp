@@ -11,6 +11,7 @@ struct options_t {
 extern options_t PRG_OPTS;
 
 typedef TCLAP::ValueArg<std::string> string_arg;
+typedef TCLAP::UnlabeledValueArg<std::string> ul_string_arg;
 typedef TCLAP::ValueArg<int> int_arg;
 typedef TCLAP::SwitchArg switch_arg;
 

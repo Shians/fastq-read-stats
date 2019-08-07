@@ -9,7 +9,7 @@ void parse_args(int &argc, char *argv[]) {
         TCLAP::CmdLine cmd("Command description message", ' ', "0.9.2");
 
         // arguments are pushed into order, so inserted from last to first
-        string_arg input("", "i", "Fastq file", true, "", "gzipped fastq", cmd);
+        ul_string_arg input("input", "Fastq file", true, "", "gzipped fastq", cmd);
 
         cmd.parse(argc, argv);
 
