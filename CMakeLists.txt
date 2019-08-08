@@ -13,7 +13,7 @@ add_executable(
 include_directories(include)
 target_link_libraries(fastq-read-stats Boost::filesystem)
 target_link_libraries(fastq-read-stats ${ZLIB_LIBRARIES})
-
+install(TARGETS fastq-read-stats DESTINATION bin)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

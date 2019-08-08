@@ -1,1 +1,9 @@
 build
+CMakeFiles
+CMakeCache.txt
+CPackConfig.cmake
+CPackSourceConfig.cmake
+cmake_install.cmake
+install_manifest.txt
+Makefile
+fastq-read-stats
