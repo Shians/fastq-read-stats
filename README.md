@@ -3,6 +3,8 @@
 Reports a summary of the read lengths in fastq(.gz) files with the format below
 
 ```
+> fastq-read-stats reads.fastq.gz
+reading from reads.fastq.gz
 Read length summary:
 
 Reads processed: 71915
