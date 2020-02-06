@@ -82,6 +82,17 @@ class FastqFile {
 
             return record;
         }
+
+        void get_record(FastqRecord &record) {
+            int l = kseq_read(_seq);
+
+            record.name = _seq->name.s;
+            record.comment = _seq->comment.s;
+            record.seq = _seq->seq.s;
+            record.qual = _seq->qual.s;
+            record.good = (l >= 0);
+        }
+
     private:
         std::string _filename;
         gzFile _fp;

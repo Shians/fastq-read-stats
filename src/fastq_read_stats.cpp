@@ -17,7 +17,7 @@ void fastq_read_stats() {
 
     FastqRecord fastq_read;
     while (1) {
-        fastq_read = input_file.get_record();
+        input_file.get_record(fastq_read);
         
         if (fastq_read.good) {
             lengths.push_back(fastq_read.seq.length());
