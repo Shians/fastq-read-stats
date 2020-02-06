@@ -28,10 +28,12 @@ void fastq_read_stats() {
 
     sort(lengths.begin(), lengths.end());
 
-    double average = accumulate(lengths.begin(), lengths.end(), 0.0)/lengths.size();
+    long int total = accumulate(lengths.begin(), lengths.end(), 0.0);
+    double average = total/lengths.size();
 
     cout << "Read length summary: \n\n";
     cout << "Reads processed: " << lengths.size() << "\n\n";
+    cout << "Total bases:     " << total << "\n";
     cout << "  Mean: " << round(average) << "\n\n";
     cout << "   Min: " << lengths[0] << "\n";
     cout << "    Q1: " << lengths[lengths.size()/4] << "\n";
