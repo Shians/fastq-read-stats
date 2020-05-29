@@ -2,10 +2,12 @@
 #include <algorithm>
 #include <boost/filesystem.hpp>
 #include <string>
+#include <stdexcept>
 #include <tclap/CmdLine.h>
 
 struct options_t {
     std::string input;
+    std::string output;
 };
 
 extern options_t PRG_OPTS;
