@@ -11,9 +11,8 @@ using std::greater;
 
 extern options_t PRG_OPTS;
 
-void fastq_read_stats() {
-    auto input_file = FastqFile(PRG_OPTS.input);
-
+void fastq_read_stats(string input_file_name) {
+    FastqFile input_file = FastqFile(input_file_name);
     vector<unsigned int> lengths;
     lengths.reserve(5000);
 
@@ -25,13 +24,6 @@ void fastq_read_stats() {
             lengths.push_back(fastq_read.seq.length());
         } else {
             break;
-        }
-    }
-
-    if (PRG_OPTS.output != "") {
-        ofstream output_file(PRG_OPTS.output);
-        for (auto const& l : lengths) {
-            output_file << l << "\n";
         }
     }
 
@@ -59,8 +51,7 @@ void fastq_read_stats() {
         }
     }
 
-    cout << "file\treads\tbases\tmean\tmin\tQ1\tmedian\tQ3\tmax\tN50\tN75\tN90" << "\n";
-    cout << PRG_OPTS.input << "\t"; // File
+    cout << input_file_name << "\t"; // File
     cout << lengths.size() << "\t"; // Reads
     cout << total << "\t"; // Bases
     cout << round(average) << "\t"; // Mean

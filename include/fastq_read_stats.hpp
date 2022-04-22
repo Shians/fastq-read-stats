@@ -7,4 +7,4 @@
 #include "options.hpp"
 #include "fastq.hpp"
 
-void fastq_read_stats(void);
+void fastq_read_stats(std::string);
