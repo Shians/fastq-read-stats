@@ -60,7 +60,6 @@ class FastqFile {
     public:
         FastqFile(std::string filename) {
             _filename = filename;
-            std::cout << "reading from " << filename << "\n";
             _fp = gzopen(_filename.c_str(), "r");
             _seq = kseq_init(_fp);
         }

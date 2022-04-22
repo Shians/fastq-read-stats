@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(fastq-read-stats VERSION 0.1.0)
+project(fastq-read-stats VERSION 0.9.3)
 set(CMAKE_CXX_STANDARD 14)
 
 find_package(Boost 1.56 REQUIRED COMPONENTS filesystem)
