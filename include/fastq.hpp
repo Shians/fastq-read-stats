@@ -17,8 +17,13 @@ class FastqRecord {
         bool good;
 
         friend std::ostream& operator<<(std::ostream &os, const FastqRecord &obj) {
-            os << "@" << obj.name << " " << obj.comment << "\n"
-                << obj.seq << "\n"
+            os << "@" << obj.name;
+            if (obj.comment != "") {
+                os << " " << obj.comment << "n";
+            } else {
+                os << "n";
+            }
+            os << obj.seq << "\n"
                 << "+" << "\n"
                 << obj.qual << "\n";
             return os;
@@ -74,7 +79,7 @@ class FastqFile {
             int l = kseq_read(_seq);
 
             record.name = _seq->name.s;
-            record.comment = _seq->comment.s;
+            record.comment = (_seq->comment.l == 0) ? "" : _seq->comment.s;
             record.seq = _seq->seq.s;
             record.qual = _seq->qual.s;
             record.good = (l >= 0);
@@ -86,7 +91,7 @@ class FastqFile {
             int l = kseq_read(_seq);
 
             record.name = _seq->name.s;
-            record.comment = _seq->comment.s;
+            record.comment = (_seq->comment.l == 0) ? "" : _seq->comment.s;
             record.seq = _seq->seq.s;
             record.qual = _seq->qual.s;
             record.good = (l >= 0);

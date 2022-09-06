@@ -20,12 +20,14 @@ Median: 508
 
 # Installation
 
-```
+```bash
 git clone https://github.com/Shians/fastq-read-stats.git
 cd fastq-read-stats
 cmake .
 make
 make install
+# To install to custom path 
+# make DESTDIR=/custom/path install
 ```
 
 # License
